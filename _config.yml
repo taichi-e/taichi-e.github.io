@@ -28,11 +28,9 @@ url: "https://taichi-e.github.io"
 github:
   username: taichi-e # change to your GitHub username
 
-twitter:
-  username: twitter_username # change to your Twitter username
 
-twitter:
-  username: twitter_username # change to your Twitter username
+# twitter:
+#   username: twitter_username # change to your Twitter username
 
 social:
   # Change to your full name.
