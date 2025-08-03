@@ -3,8 +3,12 @@
 - type: github
   icon: "fab fa-github"
 
-- type: twitter
-  icon: "fa-brands fa-x-twitter"
+# - type: twitter
+#   icon: "fa-brands fa-x-twitter"
+  
+- type: book
+  icon: "fa-solid fa-book"
+  url:  'https://booklog.jp/users/taichi-e'
 
 - type: email
   icon: "fas fa-envelope"
