@@ -41,9 +41,9 @@ social:
   email:emi@mfeed.ad.jp # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://booklog.jp/users/username
-    - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/username # change to your GitHub homepage
+    - https://github.com/taichi-e # change to your GitHub homepage
+    - https://booklog.jp/users/taichi-e
+    - https://twitter.com/username # change to your Twitter homepage    
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
