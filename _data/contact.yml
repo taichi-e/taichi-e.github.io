@@ -8,7 +8,7 @@
   
 - type: book
   icon: "fa-solid fa-book"
-  url:  'https://booklog.jp/users/taichi-e'
+#   url:  'https://booklog.jp/users/taichi-e'
 
 - type: email
   icon: "fas fa-envelope"
