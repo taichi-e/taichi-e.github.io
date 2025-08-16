@@ -5,8 +5,8 @@ description: >-
 author: taichi-e
 date: 2025-08-16 12:00:00 +0900
 media_subpath: /assets/img/20250806-gpt-oss/
-categories: [LLM, emacs]
-tags: [setup]
+categories: [emacs]
+tags: [LLM, emacs, setup]
 ---
 
 # Emacs から gpt-oss-20b（LM Studio）を使う方法
