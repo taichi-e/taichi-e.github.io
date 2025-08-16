@@ -59,6 +59,27 @@ IPv6 mostly NWとは、通信の大部分をIPv6で行い、IPv4を必要最小�
 
 結果として、IPv6 mostly NWはIPv6への移行を現実的かつ加速的に進めるための戦略的選択肢として注目されている。
 
+```
+ソリューション概要 (Solution Overview)
+
+IPv6-mostlyネットワークは基本的にDual Stackに似ているが、以下の要素が追加される。
+
+	1. NAT64 ([RFC6146]) を提供し、IPv6-onlyクライアントがIPv4-only宛先に通信できるようにする。
+
+	2. DHCPv4サーバが [RFC8925] で定義されたDHCPv4 Option 108を提供する。
+
+端末がIPv6-mostlyネットワークに接続すると、その機能に応じてスタックを構成する。
+
+	- IPv4-only端末 → DHCPv4でIPv4アドレスを取得
+
+	- Dual-Stack端末 → IPv6を構成し、さらにDHCPv4でIPv4アドレスも取得
+
+	- IPv6-only端末 → IPv6を構成し、DHCPv4でOption 108を要求して受け取った場合、IPv4アドレスを取得せずIPv6-onlyで動作
+
+このモデルでは、IPv4-only、Dual-Stack、IPv6-onlyの端末が同一セグメントで共存できる。IPv6-only端末はNAT64を介してIPv4-only宛先にアクセスする。
+```
+[IPv6-Mostly Networks: Deployment and Operations Considerations][draft-ietf-v6ops-6mops-01] の日本語訳
+
 ## IPv6 DS-Lite との関係性
 
 DS-Liteは、IPv6ネットワーク上でIPv4サービスを提供する技術であり、IPv6 mostly NWの運用モデルと密接に関係する。DS-Liteでは、IPv4パケットをIPv6トンネルで転送し、ISP側でCGNによりIPv4通信を実現する。
@@ -74,6 +95,14 @@ IPv6 mostly NWの普及に向けては、いくつかの課題が残されてい
 第二に、NAT64や464XLATといったトランスレーション技術の運用安定性を高めることが重要である。これには、[RFC8781]や[ietf-vpops-prefer]で議論されるPREF64発見手法の普及が欠かせない。
 
 第三に、運用者にとっての管理手法の標準化とベストプラクティスの共有が必要となる。これにより、IPv6 onlyネットワークの実現に向けた移行期の混乱を最小化できる。
+
+## 用語(Terminology)
+
+- Endpoint (エンドポイント): ネットワークに接続され、オペレータからホストと見なされるデバイス。ただし、場合によっては他のシステムへ接続を拡張しルータの役割を担うこともある。例として企業のノートPCやテザリングを有効化したスマートフォンがある。
+
+- Network segment (ネットワークセグメント): VLANやブロードキャストドメインのように、ホストが同一IPサブネットを共有するリンク。
+
+- PREF64 (NAT64プレフィックス): IPv6クライアントからIPv4サーバへの通信に用いられるIPv6プレフィックス [RFC6146]。
 
 ## 参考文献
 
