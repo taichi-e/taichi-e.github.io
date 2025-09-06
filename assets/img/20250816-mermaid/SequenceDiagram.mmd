@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant ユーザ
+    participant サーバ
+    participant DB
+
+    ユーザ->>サーバ: ログインリクエスト
+    サーバ->>DB: 認証情報を確認
+    DB-->>サーバ: 認証結果
+    サーバ-->>ユーザ: ログイン成功
